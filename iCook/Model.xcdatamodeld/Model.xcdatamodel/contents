@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Videos" representedClassName="Videos" syncable="YES" codeGenerationType="class">
+        <attribute name="channelDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="channelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="channelTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="etag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favourites" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="navTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Videos" positionX="-63" positionY="-18" width="128" height="195"/>
+    </elements>
+</model>
