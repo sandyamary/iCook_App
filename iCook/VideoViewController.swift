@@ -73,15 +73,8 @@ class VideoViewController: UIViewController {
         if  !videos[index].fav {
             navigationItem.rightBarButtonItem = nil
         }
-        //videoView.loadVideo(byId: videodID, startSeconds: time, suggestedQuality: .auto)
-        
-        // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     @IBAction func previousBTNTap(_ sender: Any) {
         if index != 0 {
             index = index-1
@@ -113,9 +106,6 @@ class VideoViewController: UIViewController {
     
     func videoMethod() {
         videodID = videos[index].videoId!
-        
-       // videoView.loadVideo(byId: videodID, startSeconds: currentTime, suggestedQuality: .auto)
-        
         videoView.load(withVideoId: videodID, playerVars: [
             "controls" : 1,
             "playsinline" : 1,
@@ -123,7 +113,6 @@ class VideoViewController: UIViewController {
             "showinfo" : 0,
             "modestbranding" : 0])
         isPlaying = false
-//        videoView.playVideo()
         play.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         titleLBL.text = videos[index].title
         channelNameLBL.text = videos[index].channelTitle
@@ -173,19 +162,15 @@ extension VideoViewController : YTPlayerViewDelegate
             CoreDataClass.svprogressHudDismiss(view: self)
             isPlaying = true
             play.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-//            videoView.playVideo()
             
         }else
         if state == YTPlayerState.paused
         {
             isPlaying = false
             play.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-//            videoView.pauseVideo()
         }
     }
-//    func playerViewPreferredInitialLoading(_ playerView: YTPlayerView) -> UIView? {
-//        
-//    }
+
     func playerView(_ playerView: YTPlayerView, receivedError error: YTPlayerError) {
         CoreDataClass.svprogressHudDismiss(view: self)
     }

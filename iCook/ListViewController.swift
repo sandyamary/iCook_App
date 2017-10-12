@@ -148,8 +148,6 @@ class ListViewController: UICollectionViewController {
         }) { (error) in
             print(error)
         }
-        
-        
     }
     
     func showShareOptions() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+
 class LogInViewController: UIViewController {
     var dict : [String : AnyObject]!
     var socialId = String()
@@ -20,12 +21,9 @@ class LogInViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
 
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
 
     @IBAction func faceBookBTNTap(_ sender: Any) {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
@@ -42,6 +40,7 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
